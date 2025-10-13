@@ -1,7 +1,7 @@
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/JWTUtil.java
-/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/PlayerService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/PlayerController.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/JWTUtil.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/repository/PlayerRepository.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/PlayerService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/CorsConfiguration.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Player.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/TestSecurityConfig.java

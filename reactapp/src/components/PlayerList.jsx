@@ -20,7 +20,7 @@ const PlayerList = ({ players, onDelete }) => {
       {players.map((player) => (
         <div key={player.id} className="player-card">
           <h3>{player.playerName}</h3>
-          <p>Team: {player.team}</p>
+          <p>{player.team}</p>
           <p>Role: {player.role}</p>
           <p>Age: {player.age}</p>
           <p>Total Points: {player.totalPoints}</p>

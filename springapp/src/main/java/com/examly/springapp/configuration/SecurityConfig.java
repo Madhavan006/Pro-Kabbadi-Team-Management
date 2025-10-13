@@ -54,20 +54,7 @@ public class SecurityConfig {
             .cors(Customizer.withDefaults())
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                // Auth/health/docs endpoints that should stay public
-                .requestMatchers(
-                    "/api/auth/**",
-                    "/actuator/health",
-                    "/api/users",
-                    "/v3/api-docs/**",
-                    "/swagger-ui/**",
-                    "/swagger-ui.html",
-                    "/api/**"
-                ).permitAll()
-                .anyRequest().authenticated()
-            )
-            .oauth2ResourceServer(oauth2 -> oauth2
-                .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))
+                .anyRequest().permitAll()
             );
 
         return http.build();

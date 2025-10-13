@@ -4,9 +4,7 @@ const API_BASE_URL = 'https://8080-bfabcadddbdfbaeebddbeceabcefefcd.premiumproje
 
 export const addPlayer = async (player) => {
   try {
-    console.log('Adding player:', player);
     const response = await axios.post(`${API_BASE_URL}/addPlayer`, player);
-    console.log('Player added:', response.data);
     return response.data;
   } catch (error) {
     console.error('Add player error:', error);
@@ -16,9 +14,7 @@ export const addPlayer = async (player) => {
 
 export const getAllPlayers = async () => {
   try {
-    console.log('Calling API:', `${API_BASE_URL}/allPlayers`);
     const response = await axios.get(`${API_BASE_URL}/allPlayers`);
-    console.log('API Response:', response.data);
     return response.data;
   } catch (error) {
     console.error('API Error:', error);

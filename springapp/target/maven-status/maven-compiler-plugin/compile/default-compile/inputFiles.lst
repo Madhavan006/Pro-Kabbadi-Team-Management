@@ -4,6 +4,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/service/PlayerService.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/CorsConfiguration.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/model/Player.java
+/home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/controller/TestController.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/TestSecurityConfig.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/examly/springapp/configuration/SecurityConfig.java

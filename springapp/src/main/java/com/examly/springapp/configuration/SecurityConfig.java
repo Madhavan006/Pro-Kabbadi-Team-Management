@@ -104,10 +104,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(List.of(
-            "https://8081-fddecedccde329052728bccfaccecftwo.premiumproject.examly.io",
-            "http://localhost:3000"
-        ));
+        cfg.setAllowedOriginPatterns(List.of("*"));
         cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(List.of("*")); // allow all headers for simplicity
         cfg.setAllowCredentials(true);

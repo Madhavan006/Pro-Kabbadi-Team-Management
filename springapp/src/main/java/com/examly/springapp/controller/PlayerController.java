@@ -5,11 +5,12 @@ import com.examly.springapp.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/players")
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8081"})
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class PlayerController {
     
     @Autowired
@@ -17,13 +18,16 @@ public class PlayerController {
     
     @PostMapping("/addPlayer")
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
+        System.out.println("Received player: " + player.getPlayerName());
         Player savedPlayer = playerService.savePlayer(player);
+        System.out.println("Saved player with ID: " + savedPlayer.getId());
         return ResponseEntity.ok(savedPlayer);
     }
     
     @GetMapping("/allPlayers")
     public ResponseEntity<List<Player>> getAllPlayers() {
         List<Player> players = playerService.getAllPlayers();
+        System.out.println("Found " + players.size() + " players");
         return ResponseEntity.ok(players);
     }
     

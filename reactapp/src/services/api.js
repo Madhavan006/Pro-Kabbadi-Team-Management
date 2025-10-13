@@ -1,15 +1,29 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/api/players';
+const API_BASE_URL = 'https://8080-bfabcadddbdfbaeebddbeceabcefefcd.premiumproject.examly.io/api/players';
 
 export const addPlayer = async (player) => {
-  const response = await axios.post(`${API_BASE_URL}/addPlayer`, player);
-  return response.data;
+  try {
+    console.log('Adding player:', player);
+    const response = await axios.post(`${API_BASE_URL}/addPlayer`, player);
+    console.log('Player added:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Add player error:', error);
+    throw error;
+  }
 };
 
 export const getAllPlayers = async () => {
-  const response = await axios.get(`${API_BASE_URL}/allPlayers`);
-  return response.data;
+  try {
+    console.log('Calling API:', `${API_BASE_URL}/allPlayers`);
+    const response = await axios.get(`${API_BASE_URL}/allPlayers`);
+    console.log('API Response:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('API Error:', error);
+    throw error;
+  }
 };
 
 export const getPlayersByRole = async (role) => {

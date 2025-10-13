@@ -41,7 +41,7 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@Profile("!test") // <-- active in prod/dev, NOT in tests
+@Profile("disabled") // <-- disabled completely
 public class SecurityConfig {
 
     @Value("${app.jwt.secret:ThisIsADevOnlySecretChangeMeToAtLeast32Chars}")
@@ -107,7 +107,7 @@ public class SecurityConfig {
         cfg.setAllowedOriginPatterns(List.of("*"));
         cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(List.of("*")); // allow all headers for simplicity
-        cfg.setAllowCredentials(true);
+        cfg.setAllowCredentials(false);
     
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", cfg);

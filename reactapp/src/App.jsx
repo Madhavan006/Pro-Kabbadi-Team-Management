@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import PlayerForm from './components/PlayerForm';
 import PlayerList from './components/PlayerList';
@@ -9,7 +9,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [filter, setFilter] = useState('all');
 
-  const fetchPlayers = async () => {
+  const fetchPlayers = useCallback(async () => {
     try {
       let data;
       if (filter === 'all') {
@@ -19,15 +19,17 @@ function App() {
       } else {
         data = await getPlayersByRole(filter);
       }
-      setPlayers(data);
+      console.log('Fetched players:', data);
+      setPlayers(data || []);
     } catch (error) {
       console.error('Error fetching players:', error);
+      setPlayers([]);
     }
-  };
+  }, [filter]);
 
   useEffect(() => {
     fetchPlayers();
-  }, [filter]);
+  }, [filter, fetchPlayers]);
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);

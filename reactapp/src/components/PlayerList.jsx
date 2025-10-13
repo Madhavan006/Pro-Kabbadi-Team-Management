@@ -3,11 +3,14 @@ import { deletePlayer } from '../services/api';
 
 const PlayerList = ({ players, onDelete }) => {
   const handleDelete = async (id) => {
-    try {
-      await deletePlayer(id);
-      onDelete();
-    } catch (error) {
-      console.error('Error deleting player:', error);
+    if (window.confirm('Are you sure you want to delete this player?')) {
+      try {
+        await deletePlayer(id);
+        alert('Player deleted successfully!');
+        onDelete();
+      } catch (error) {
+        console.error('Error deleting player:', error);
+      }
     }
   };
 

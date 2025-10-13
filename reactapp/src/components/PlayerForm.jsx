@@ -25,6 +25,7 @@ const PlayerForm = ({ onAdd }) => {
         age: parseInt(formData.age),
         totalPoints: parseInt(formData.totalPoints)
       });
+      alert('Player added successfully!');
       onAdd();
       setFormData({
         playerName: '',
